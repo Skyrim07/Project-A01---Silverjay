@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Prepare.unity
+    guid: 14d346560bbdbdf45a9ce3bc2045ba57
+  - enabled: 1
+    path: Assets/Scenes/Firefly_Frontier_Main.unity
+    guid: e79993e81c18c724dae7542c14074b93
+  - enabled: 1
+    path: Assets/Scenes/Firefly_Tavern.unity
+    guid: 16a7dcfde4910eb4eac4e3c5a62aa46f
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 880306634ec2ae44ab66c3959b3d799d
+  - enabled: 1
+    path: Assets/Scenes/Main_Menu.unity
+    guid: 90f94f242bda5964f9209db3c1ed91a5
+  m_configObjects: {}
