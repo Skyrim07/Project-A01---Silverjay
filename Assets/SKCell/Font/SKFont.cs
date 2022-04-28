@@ -8,10 +8,6 @@ using TMPro;
 
 namespace SKCell
 {
-    public class SKFont 
-    {
-       
-    }
 #if UNITY_EDITOR
     [ExecuteInEditMode]
     public class SKFontWindow: EditorWindow
@@ -26,6 +22,7 @@ namespace SKCell
             SKFontWindow window = GetWindow<SKFontWindow>("FontChart");
             window.minSize = window.maxSize= new Vector2(600, 800);
             UpdateAssetFile();
+            LoadAsset();
         }
         private void OnGUI()
         {
@@ -72,6 +69,10 @@ namespace SKCell
             {
                 AddFont();
             }
+            if (GUILayout.Button("Save Asset", GUILayout.Width(200)))
+            {
+                SaveAsset();
+            }
             EditorGUILayout.EndHorizontal();
             GUILayout.EndArea();
             GUI.skin.label.fontSize = 15;
@@ -89,6 +90,34 @@ namespace SKCell
         {
             asset = SKAssetLibrary.FontAsset;
         }
+
+        private static void SaveAsset()
+        {
+            SKFontAssetJson j_asset = new SKFontAssetJson();
+            int i = 0;
+            j_asset.fontIDs = new string[asset.fontList.Count];
+            foreach (var item in asset.fontList)
+            {
+                j_asset.fontIDs[i] =item.name;
+                i++;
+            }
+            CommonUtils.SKSaveObjectToJson(j_asset, "SKFontAsset.txt");
+        }
+
+        private static void LoadAsset()
+        {
+            SKFontAssetJson j_asset = CommonUtils.SKLoadObjectFromJson<SKFontAssetJson>("SKFontAsset.txt");
+            asset.fontList.Clear();
+            for (int i = 0; i < j_asset.fontIDs.Length; i++)
+            {
+                asset.fontList.Add(AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Resources/Font/" + j_asset.fontIDs[i] + ".asset"));
+            }
+        }
+    }
+
+    public class SKFontAssetJson
+    {
+        public string[] fontIDs;
     }
 #endif
 }

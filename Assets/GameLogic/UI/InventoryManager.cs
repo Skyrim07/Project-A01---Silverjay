@@ -5,7 +5,9 @@ using UnityEngine;
 using SKCell;
 public sealed class InventoryManager : MonoSingleton<InventoryManager>
 {
-    public static List<InventoryItem> InventoryItems = new List<InventoryItem>();
+    public static List<InventoryItem> InventoryItems = new List<InventoryItem>(); //Detailed info of all items
+    public static List<int> InventoryItemIDs = new List<int>(); //IDs of all distinct items
+
 
     /// <summary>
     /// See if item can be added to inventory
@@ -52,17 +54,25 @@ public sealed class InventoryManager : MonoSingleton<InventoryManager>
     public void OnUseItem(InventoryItem item)
     {
         int count = item.count;
-        InventoryItemInfo info = item.info;
 
+    }
+
+    /// <summary>
+    /// On player collects a collectible item in the scene
+    /// </summary>
+    /// <param name="item"></param>
+    public void OnCollectibleItemCollect(CollectibleItem item)
+    {
+        InventoryItem itemInfo = item.itemInfo;
     }
 }
 
 public class AddItemOptions
 {
-    public ItemEffect effect;
+    public AddItemEffect effect;
 }
 
-public enum ItemEffect
+public enum AddItemEffect
 {
     None,
     Side,

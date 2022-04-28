@@ -24,7 +24,7 @@ namespace SKCell
         static Vector2 scrollPos = Vector2.zero;
         static int subPage = 0;
         static List<LocalizedTextConfig> builtTextList = new List<LocalizedTextConfig>();
-        static string[] textSubpageTitles = { "General", "Scene Titles", "Items", "Characters", "Player", "", "", "Firefly Frontier" };
+        static string[] textSubpageTitles = { "General", "Scene Titles", "Consumables", "Characters", "Player", "Feathers / Artifact", "Other Items", "Firefly Frontier" };
 
         [MenuItem("SKCell/Localization/Localization ALL_IN_ONE")]
         public static void Initialize()
@@ -190,6 +190,7 @@ namespace SKCell
                             DeleteLanguageSupport(i);
                         }
                     }
+
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.Space(30);
                 }
