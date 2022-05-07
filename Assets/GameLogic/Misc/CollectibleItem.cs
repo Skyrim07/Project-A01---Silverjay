@@ -78,7 +78,7 @@ public class CollectibleItem : MonoBehaviour
         emptyVisual.SetActive(true);
         isPlayerIn = false;
         if (indicatorAnim)
-        {
+    {
             indicatorAnim.SetBool("Appear", false);
         }
     }
