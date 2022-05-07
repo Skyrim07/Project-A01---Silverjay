@@ -120,6 +120,24 @@ public static class GlobalLibrary
                 "Tavern_1"
             }
         }},
+         {SceneTitle.TestScene, new SceneSpecifics()
+        {
+            sceneName = "Test Scene",
+            sceneNameLocalID = 1004,
+            cameraSize = 17.5f,
+            postprocessingProfile = 0,
+            weather = new SceneWeather()
+            {
+                type = WeatherType.Rain,
+                probability = 0.5f,
+                interval = 15.0f
+            },
+            bgms = new string[]
+            {
+                "Firefly_Frontier_0",
+                "Firefly_Frontier_1"
+            }
+        }},
     };
 
     public static readonly string G_SCENE_LOADING_ASSET_NAME = "Loading";
@@ -129,6 +147,7 @@ public static class GlobalLibrary
         { SceneTitle.FireflyFrontier, "Firefly_Frontier_Main" },
         { SceneTitle.FireflyTavern, "Firefly_Tavern" },
         { SceneTitle.MainMenu, "Main_Menu" },
+        { SceneTitle.TestScene, "Test_Scene" },
     };
 
     public static readonly Dictionary<int, SceneTitle> G_SCENE_INDEX = new Dictionary<int, SceneTitle>()
@@ -136,6 +155,8 @@ public static class GlobalLibrary
         { 100, SceneTitle.MainMenu },
         { 102, SceneTitle.FireflyFrontier },
         { 103, SceneTitle.FireflyTavern },
+
+        { 900, SceneTitle.TestScene },
     };
     #endregion
 

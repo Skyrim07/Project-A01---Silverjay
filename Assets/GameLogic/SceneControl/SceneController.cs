@@ -142,4 +142,5 @@ public enum SceneTitle
     FireflyTavern = 2,
     WesternTower = 3,
     FarawayShack = 4,
+    TestScene = 5,
 }
