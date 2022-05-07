@@ -142,6 +142,10 @@ public static class GlobalLibrary
     #region UI
     public static readonly float G_UI_SCENE_LABEL_DURATION = 4.0f;
 
+    //Inventory
+    public static readonly int G_INVENTORY_COUNT_TEXT_LOCAL_ID = 9;
+
+    //Conversation
     public static readonly Dictionary<int, Conversation> G_UI_CONVERSATIONS = new Dictionary<int, Conversation>()
     {
         {100, new Conversation()
@@ -882,6 +886,242 @@ public static class GlobalLibrary
                 },
             },
         } },
+
+        //花岛旅客女
+        {151, new Conversation()
+        {
+            id = 151,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3018,
+                    localID = 7072,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3018,
+                    localID = 7073,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3018,
+                    localID = 7074,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3018,
+                    localID = 7075,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3018,
+                    localID = 7076,
+                },
+            },
+        } },
+
+        //花岛旅客男
+        {152, new Conversation()
+        {
+            id = 152,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3019,
+                    localID = 7077,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3019,
+                    localID = 7078,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3019,
+                    localID = 7079,
+                },
+            },
+        } },
+         {153, new Conversation()
+        {
+            id = 153,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3020,
+                    localID = 7080,
+                },
+            },
+        } },
+        {154, new Conversation()
+        {
+            id = 154,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7081,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7082,
+                },
+            },
+        } },
+            {155, new Conversation()
+        {
+            id = 155,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7083,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7084,
+                },
+            },
+        } },
+        {156, new Conversation()
+        {
+            id = 156,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7085,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7086,
+                },
+            },
+        } },
+        {157, new Conversation()
+        {
+            id = 157,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7087,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7088,
+                },
+            },
+        } },
+
+        {158, new Conversation()
+        {
+            id = 158,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7089,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7090,
+                },
+            },
+        } },
+        {159, new Conversation()
+        {
+            id = 159,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7091,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7092,
+                },
+            },
+        } },
+        {160, new Conversation()
+        {
+            id = 160,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7093,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7094,
+                },
+            },
+        } },
+        {161, new Conversation()
+        {
+            id = 161,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7095,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7096,
+                },
+            },
+        } },
+         {162, new Conversation()
+        {
+            id = 162,
+            type = ConversationType.InScene,
+            sentences = new List<Sentence>()
+            {
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7097,
+                },
+                new Sentence()
+                {
+                    speakerLocalID = 3008,
+                    localID = 7098,
+                },
+            },
+        } },
     };
     #endregion
 
@@ -909,7 +1149,7 @@ public static class GlobalLibrary
     #endregion
 
     #region Console
-    public static readonly KeyCode G_CONSOLE_ACTIVATE_KEY = KeyCode.Tab;
+    public static readonly KeyCode G_CONSOLE_ACTIVATE_KEY = KeyCode.LeftAlt;
     public static readonly KeyCode G_CONSOLE_INPUT_KEY = KeyCode.LeftControl;
 
     public static readonly string G_CONSOLE_ERROR_MESSAGE = "Command not valid!";
@@ -922,6 +1162,7 @@ public static class GlobalLibrary
 
     public const string G_CONSOLE_TITLE_LANGUAGE = "lang";
     public const string G_CONSOLE_TITLE_SET_VALUE = "set";
+    public const string G_CONSOLE_TITLE_GIVE_ITEM = "give";
 
 
     public const string G_CONSOLE_CHR_PLAYER = "ply";
@@ -934,6 +1175,8 @@ public static class GlobalLibrary
     #endregion
 
     #region Input
+    public static readonly KeyCode INPUT_EXIT_KEYCODE = KeyCode.Escape;
+    public static readonly KeyCode INPUT_PROCEED_KEYCODE = KeyCode.Return;
     public static readonly KeyCode INPUT_ENTER_SCENE_KEYCODE = KeyCode.W;
     public static readonly KeyCode INPUT_JUMP_KEYCODE = KeyCode.Space;
     public static readonly KeyCode INPUT_UP_KEYCODE = KeyCode.W;
@@ -945,5 +1188,7 @@ public static class GlobalLibrary
     public static readonly float INPUT_PLAYER_LOOK_DOWN_HOLD_TIME = 0.6f;
 
     public static readonly KeyCode INPUT_ATTACK_KEYCODE = KeyCode.Mouse0;
+
+    public static readonly KeyCode INPUT_OPEN_INVENTORY_KEYCODE = KeyCode.Tab;
     #endregion
 }

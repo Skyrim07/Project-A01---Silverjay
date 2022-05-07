@@ -58,6 +58,7 @@ namespace SKCell
                 OnPanelDeactivated();
             }
         }
+
         /// <summary>
         /// Activate the given leaf panel.
         /// </summary>

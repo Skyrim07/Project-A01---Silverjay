@@ -44,6 +44,10 @@ namespace SKCell
         /// <param name="localID"></param>
         public void UpdateLocalID( int localID )
         {
+            if (!skLocal)
+            {
+                skLocal = CommonUtils.GetComponentNonAlloc<SKLocalization>(gameObject);
+            }
             skLocal.localID = localID;
             ApplyLocalization(SKEnvironment.curLanguage);
         }

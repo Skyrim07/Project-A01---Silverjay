@@ -2273,13 +2273,13 @@ namespace SKCell
 
         public static void SKSaveObjectToJson(object obj, string fileName)
         {
-            string path = SKAssetLibrary.RESOURCES_JSON_PATH_SUFFIX + fileName;
+            string path = (Application.isMobilePlatform ? Application.persistentDataPath : Application.streamingAssetsPath) + SKAssetLibrary.JSON_PATH_SUFFIX + fileName;
             File.WriteAllText(path, JsonUtility.ToJson(obj, true));
             EditorLogNormal($"Save to json: {fileName}");
         }
         public static T SKLoadObjectFromJson<T>(string fileName)
         {
-            string path = SKAssetLibrary.RESOURCES_JSON_PATH_SUFFIX + fileName;
+            string path = (Application.isMobilePlatform ? Application.persistentDataPath : Application.streamingAssetsPath) + SKAssetLibrary.JSON_PATH_SUFFIX + fileName;
             return JsonUtility.FromJson<T>(File.ReadAllText(path));
         }
         public static void SaveObjectToJson(object obj, string fileName)

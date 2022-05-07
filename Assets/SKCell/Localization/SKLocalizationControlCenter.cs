@@ -610,7 +610,7 @@ namespace SKCell
             {
                 case LocalizationType.Text:
                     id = textConfig.id;
-                    localText = textConfig.localTexts[(int)language];
+                    localText = textConfig.localTexts[(int)language].Replace(@"\r\n", "\r\n");
                     fontOverride = textConfig.fontOverrides[(int)language];
                     break;
                 case LocalizationType.Image:

@@ -47,7 +47,7 @@ public sealed class ConversationManager : MonoSingleton<ConversationManager>
         panel_InScene.position = panelPosition;
         if (conv != null)
         {
-            if (Input.GetKeyDown(GlobalLibrary.INPUT_INTERACT_KEYCODE))
+            if (Input.GetKeyDown(GlobalLibrary.INPUT_INTERACT_KEYCODE)|| Input.GetKeyDown(GlobalLibrary.INPUT_PROCEED_KEYCODE))
             {
                 NextSentence();
             }

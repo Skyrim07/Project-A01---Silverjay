@@ -89,6 +89,27 @@ public sealed class ConsoleCommand
                     InGameConsole.instance.OnCommandInvalid();
                 }
                 break;
+
+            case GlobalLibrary.G_CONSOLE_TITLE_GIVE_ITEM:
+                if (args != null && args.Length == 3)
+                {
+                    if (args[0] == GlobalLibrary.G_CONSOLE_CHR_PLAYER)
+                    {
+                        int itemID = int.Parse(args[1]);
+                        int count = int.Parse(args[2]);
+                        InventoryItem item = new InventoryItem()
+                        {
+                            itemID = itemID,
+                            count = count,
+                        };
+                        InventoryManager.instance.AddItem(item);
+                    }
+                }
+                else
+                {
+                    InGameConsole.instance.OnCommandInvalid();
+                }
+                break;
             default:
                 InGameConsole.instance.OnCommandInvalid();
                 break;

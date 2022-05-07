@@ -202,6 +202,7 @@ namespace SKCell
                     CommonUtils.EditorLogWarning($"SKButton: Animator not initialized! Gameobject: {name}");
                     return;
                 }
+                anim.ResetTrigger("Normal");
                 anim.SetTrigger("Normal");
             }
         }
@@ -226,6 +227,7 @@ namespace SKCell
                     CommonUtils.EditorLogWarning($"SKButton: Animator not initialized! Gameobject: {name}");
                     return;
                 }
+                anim.ResetTrigger("Over");
                 anim.SetTrigger("Over");
             }
         }
@@ -250,6 +252,7 @@ namespace SKCell
                     CommonUtils.EditorLogWarning($"SKButton: Animator not initialized! Gameobject: {name}");
                     return;
                 }
+                anim.ResetTrigger("Pressed");
                 anim.SetTrigger("Pressed");
             }
         }
@@ -272,6 +275,7 @@ namespace SKCell
                     CommonUtils.EditorLogWarning($"SKButton: Animator not initialized! Gameobject: {name}");
                     return;
                 }
+                anim.ResetTrigger("Disabled");
                 anim.SetTrigger("Disabled");
             }
         }

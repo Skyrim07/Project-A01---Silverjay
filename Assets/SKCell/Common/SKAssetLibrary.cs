@@ -21,7 +21,7 @@ namespace SKCell
         public const string MATERIAL_PATH = "Assets/SKCell/Resources/SKCell/Materials";
 
         public const string PREFAB_PATH = "Assets/SKCell/Resources/SKCell/Prefabs";
-        public const string RESOURCES_JSON_PATH_SUFFIX = "Assets/SKCell//Resources/SKCell/Json/";
+        public const string RESOURCES_JSON_PATH_SUFFIX = "/SKCell//Resources/SKCell/Json/";
         public const string PANEL_PREFAB_PATH = "/Resources/SKCell/UI/Panels";
 
         public const string JSON_PATH_SUFFIX = "/Json/";
