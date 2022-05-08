@@ -35,6 +35,9 @@ namespace SKCell
         //Lifecycle Module
         public static readonly int PLAYER_ON_SPAWN = 2201;
         public static readonly int PLAYER_ON_DIE = 2202;
+
+        //Combat Module
+        public static readonly int PLAYER_ON_ATTACK_FINISH = 2301;
         #endregion
 
         //~3000
