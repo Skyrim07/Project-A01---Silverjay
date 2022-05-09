@@ -38,6 +38,8 @@ namespace SKCell
 
         //Combat Module
         public static readonly int PLAYER_ON_ATTACK_FINISH = 2301;
+        public static readonly int PLAYER_ON_ATTACK_MOVEMENT_START = 2302;
+        public static readonly int PLAYER_ON_ATTACK_MOVEMENT_END = 2303;
         #endregion
 
         //~3000

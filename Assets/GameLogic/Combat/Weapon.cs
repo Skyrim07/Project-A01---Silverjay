@@ -6,12 +6,13 @@ using SKCell;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private SO_WeaponData weaponData;
+    public SO_WeaponData weaponData;
+    public int attackCounter { get; private set; }
 
     protected Animator baseAnimator;
     protected Animator weaponAnimator;
 
-    protected int attackCounter;
+
 
     protected virtual void Start()
     {
@@ -34,6 +35,8 @@ public class Weapon : MonoBehaviour
         }
         baseAnimator.SetBool("attack", true);
         weaponAnimator.SetBool("attack", true);
+        baseAnimator.SetInteger("attackCounter", attackCounter);
+        weaponAnimator.SetInteger("attackCounter", attackCounter);
     }
 
     public virtual void ExitWeapon()
@@ -53,15 +56,16 @@ public class Weapon : MonoBehaviour
     public virtual void AnimationFinishTrigger()
     {
         EventDispatcher.Dispatch(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_FINISH);
+        
     }
 
     public virtual void AnimationStartMovementTrigger()
     {
-
+        EventDispatcher.Dispatch(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_START);
     }
     public virtual void AnimationStopMovementTrigger()
     {
-
+        EventDispatcher.Dispatch(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_END);
     }
     #endregion
 

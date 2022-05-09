@@ -6,6 +6,7 @@ using SKCell;
 public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
 {
     private Weapon weapon;
+    private PlayerMovement playerMovement;
 
     private bool combatEnable;
 
@@ -13,16 +14,39 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
 
     private bool animationFinishTrigger;
 
+    private float velocityToSet;
+
+    private bool setVelocity;
+     
+
     public TempWeaponInventory inventory { get; private set; }
     public void Initialize()
     {
         combatEnable = true;
         inventory = GetComponent<TempWeaponInventory>();
         SetWeapon(inventory.weapons[0]);//Use first weapon in the inventory for testing
+        setVelocity = false;
+        playerMovement = GetComponent<PlayerMovement>();
 
         EventDispatcher.AddListener(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_FINISH, new SJEvent(() => //Check When the Attack Animation Finished
         {
-            animationFinishTrigger = false;
+            
+            animationFinishTrigger = true;
+        }));
+
+        EventDispatcher.AddListener(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_START, new SJEvent(() => 
+        {
+            
+            velocityToSet = weapon.weaponData.movementSpeed[weapon.attackCounter]; //set the velocity by current attack Counter
+            
+            setVelocity = true;
+        }));
+
+        EventDispatcher.AddListener(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_END, new SJEvent(() => 
+        {
+            
+            velocityToSet = 0f;
+
         }));
     }
 
@@ -35,6 +59,7 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
     {
         HandleCombatInput();
         HandleCombatState();
+        HandleAttackMovement();
     }
 
     public bool CheckCanAttack()
@@ -47,6 +72,7 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
         if (Input.GetMouseButtonDown(0) && combatEnable)
         {
             combatState = true;
+            weapon.EnterWeapon();
         }
     }
 
@@ -59,8 +85,24 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
     {
         if (combatState && animationFinishTrigger)
         {
+            
             weapon.ExitWeapon();
             combatState = false;
+            animationFinishTrigger = false;
+            setVelocity = false;
         }
+    }
+
+    private void HandleAttackMovement()
+    {
+        if (setVelocity) 
+        {
+            playerMovement.SetPlayerVelocity(velocityToSet);
+        }
+    }
+
+    public bool GetCombatState()
+    {
+        return combatState;
     }
 }

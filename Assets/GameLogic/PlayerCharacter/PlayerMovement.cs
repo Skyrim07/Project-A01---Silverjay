@@ -41,8 +41,13 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
     private float lookTimer;
     private int dir = 1;
     private int jumpCount = 0;
+    private int facingDirection = -1;
     public bool lastIsGround, isGround;
     public bool canDash=true;
+
+    private bool combatMovement;
+    private Vector2 combatMovementSpeed;
+    
     public void Initialize()
     {
         lastPos =transform.position;
@@ -52,6 +57,19 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
         oGravity = rb.gravityScale;
 
         EventDispatcher.Dispatch(EventDispatcher.Player, EventRef.PLAYER_MOVEMENT_MODULE_START);
+
+        EventDispatcher.AddListener(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_START, new SJEvent(() =>
+        {
+            combatMovement = true;
+        }));
+
+        EventDispatcher.AddListener(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_END, new SJEvent(() =>
+        {
+
+            combatMovement = false;
+
+        }));
+
         EventDispatcher.AddListener(EventDispatcher.Common, EventRef.CM_ON_SCENE_LOADED, new SJEvent(() =>
         {
             if(!GlobalLibrary.G_SCENE_SPECIFICS[RuntimeData.activeSceneTitle].disablePlayerGravity)
@@ -95,10 +113,19 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
 
     void HandleVelocity()
     {
-        Vector2 velocity = Vector2.zero;
-        velocity += velo_InputMove;
-        velocity.y = rb.velocity.y;
-        rb.velocity = velocity;
+        if (!combatMovement)
+        {
+            Vector2 velocity = Vector2.zero;
+            velocity += velo_InputMove;
+            velocity.y = rb.velocity.y;
+            rb.velocity = velocity;
+        }
+        else
+        {
+            
+            rb.velocity = combatMovementSpeed;
+        }
+        
     }
     void HandleGroundDetection()
     {
@@ -249,14 +276,23 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
     void HandleTurn()
     {
         if (hAxis > 0)
-             SetOrientation(false);
+        {
+            SetOrientation(false);
+            facingDirection = 1;
+        }
+            
         else if (hAxis < 0)
+        {
             SetOrientation(true);
+            facingDirection = -1;
+        }
+            
     }
 
     public void SetOrientation(bool isOne)
     {
         visualTF.localScale = new Vector3((isOne?1:-1) * oScale.x, oScale.y, oScale.z);
+        
     }
 
     void HandleJump()
@@ -329,5 +365,17 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
     public void SetGravity(float val)
     {
         rb.gravityScale = val;
+    }
+
+    public int GetFacingDirection()
+    {
+        return facingDirection;
+    }
+
+    public void SetPlayerVelocity(float velocity)
+    {
+
+        combatMovementSpeed = new Vector2 (facingDirection * velocity, 0);
+
     }
 }
