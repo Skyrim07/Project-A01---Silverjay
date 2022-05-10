@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
 
 
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         baseAnimator = transform.Find("Base").GetComponent<Animator>();
         weaponAnimator = transform.Find("Weapon").GetComponent<Animator>();
@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
     {
         gameObject.SetActive(true); //Enable Weapon when using it
 
-        if (attackCounter >= weaponData.movementSpeed.Length)//temp value
+        if (attackCounter >= weaponData.amountOfAttacks)//temp value
         {
             attackCounter = 0;
         }
@@ -66,6 +66,11 @@ public class Weapon : MonoBehaviour
     public virtual void AnimationStopMovementTrigger()
     {
         EventDispatcher.Dispatch(EventDispatcher.Player, EventRef.PLAYER_ON_ATTACK_MOVEMENT_END);
+    }
+
+    public virtual void AnimationActionTrigger()
+    {
+
     }
     #endregion
 

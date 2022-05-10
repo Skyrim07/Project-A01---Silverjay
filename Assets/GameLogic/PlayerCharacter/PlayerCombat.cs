@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using SKCell;
-public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
+public sealed class PlayerCombat : MonoBehaviour, IPlayerModule, IDamageable
 {
     private Weapon weapon;
     private PlayerMovement playerMovement;
@@ -104,5 +104,10 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
     public bool GetCombatState()
     {
         return combatState;
+    }
+
+    public void Damage(float amount)
+    {
+        //
     }
 }
