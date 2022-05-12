@@ -1212,4 +1212,13 @@ public static class GlobalLibrary
 
     public static readonly KeyCode INPUT_OPEN_INVENTORY_KEYCODE = KeyCode.Tab;
     #endregion
+
+
+    #region Combat
+
+    public static readonly float ATKScreenShakeMagnitude = 0.2f;
+    public static readonly int ATKHitPauseTime = 6;
+    public static readonly float ATKShakeTIME = 0.2f;
+    #endregion
+
 }

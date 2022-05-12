@@ -69,7 +69,7 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule, IDamageable
 
     private void HandleCombatInput()
     {
-        if (Input.GetMouseButtonDown(0) && combatEnable)
+        if (Input.GetKeyDown(GlobalLibrary.INPUT_ATTACK_KEYCODE) && combatEnable)
         {
             combatState = true;
             weapon.EnterWeapon();

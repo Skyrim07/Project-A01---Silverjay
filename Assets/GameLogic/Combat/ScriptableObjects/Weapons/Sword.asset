@@ -14,11 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDetails:
   - attackName: Slash Attack 1
-    movementSpeed: 20
+    movementSpeed: 8
     damageAmount: 10
+    knockbackStrength: 10
+    knockbackAngle: {x: 1, y: 1}
   - attackName: Slash Attack 2
-    movementSpeed: 5
+    movementSpeed: 4
     damageAmount: 15
+    knockbackStrength: 15
+    knockbackAngle: {x: 1, y: 1}
   - attackName: Slash Attack 3
-    movementSpeed: 10
+    movementSpeed: 2
     damageAmount: 20
+    knockbackStrength: 20
+    knockbackAngle: {x: 1, y: 2}

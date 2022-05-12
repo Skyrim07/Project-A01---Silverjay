@@ -19,6 +19,7 @@ public sealed class RuntimeData : MonoSingleton<RuntimeData>
     public static bool player_IsOnSlope;
     public static bool player_IsDashing;
     public static bool player_IsLooking;
+    public static int  player_FacingDirection;
     #endregion
 
     #region Scene

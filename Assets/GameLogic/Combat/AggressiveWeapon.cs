@@ -6,7 +6,8 @@ public class AggressiveWeapon : Weapon
 {
     protected SO_AggressiveWeaponData aggressiveWeaponData;
 
-    private List<IDamageable> detectedDamageable = new List<IDamageable>();
+    private List<IDamageable> detectedDamageables = new List<IDamageable>();
+    private List<IKnockbackable> detectedKnockbackables = new List<IKnockbackable>();
 
     protected override void Awake()
     {
@@ -30,20 +31,31 @@ public class AggressiveWeapon : Weapon
     private void CheckMelleeAttack()
     {
         AttackDetails details = aggressiveWeaponData.AttackDetails[attackCounter];
-        foreach(IDamageable item in detectedDamageable)
+        foreach(IDamageable item in detectedDamageables)
         {
             item.Damage(details.damageAmount);
+            CinemachineShake.Instance.ShakeCamera(GlobalLibrary.ATKScreenShakeMagnitude, GlobalLibrary.ATKShakeTIME);
+            CinemachineShake.Instance.HitPause(GlobalLibrary.ATKHitPauseTime);
         }
+
+        foreach (IKnockbackable item in detectedKnockbackables)
+        {
+            item.Kockback(details.knockbackAngle, details.knockbackStrength, RuntimeData.player_FacingDirection); 
+        }  
     }
 
     public void AddToDetected(Collider2D collision)
     {
         
         IDamageable damageable = collision.GetComponent<IDamageable>();
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
         if(damageable != null)
         {
-            
-            detectedDamageable.Add(damageable);
+            detectedDamageables.Add(damageable);
+        }
+        if (knockbackable != null)
+        {
+            detectedKnockbackables.Add(knockbackable);
         }
     }
 
@@ -51,10 +63,14 @@ public class AggressiveWeapon : Weapon
     {
         
         IDamageable damageable = collision.GetComponent<IDamageable>();
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
         if (damageable != null)
         {
-            
-            detectedDamageable.Remove(damageable);
+            detectedDamageables.Remove(damageable);
+        }
+        if (knockbackable != null)
+        {
+            detectedKnockbackables.Remove(knockbackable);
         }
     }
 

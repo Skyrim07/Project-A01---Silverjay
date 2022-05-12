@@ -41,7 +41,6 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
     private float lookTimer;
     private int dir = 1;
     private int jumpCount = 0;
-    private int facingDirection = -1;
     public bool lastIsGround, isGround;
     public bool canDash=true;
 
@@ -55,6 +54,8 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
         cld = GetComponent<Collider2D>();
         oScale = visualTF.localScale;
         oGravity = rb.gravityScale;
+
+        RuntimeData.player_FacingDirection = -1; //SetPlayerInitalFacingDirection;
 
         EventDispatcher.Dispatch(EventDispatcher.Player, EventRef.PLAYER_MOVEMENT_MODULE_START);
 
@@ -278,13 +279,13 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
         if (hAxis > 0)
         {
             SetOrientation(false);
-            facingDirection = 1;
+            RuntimeData.player_FacingDirection = 1;
         }
             
         else if (hAxis < 0)
         {
             SetOrientation(true);
-            facingDirection = -1;
+            RuntimeData.player_FacingDirection = -1;
         }
             
     }
@@ -367,15 +368,12 @@ public sealed class PlayerMovement : MonoBehaviour, IPlayerModule
         rb.gravityScale = val;
     }
 
-    public int GetFacingDirection()
-    {
-        return facingDirection;
-    }
+   
 
     public void SetPlayerVelocity(float velocity)
     {
 
-        combatMovementSpeed = new Vector2 (facingDirection * velocity, 0);
+        combatMovementSpeed = new Vector2 (RuntimeData.player_FacingDirection * velocity, 0);
 
     }
 }

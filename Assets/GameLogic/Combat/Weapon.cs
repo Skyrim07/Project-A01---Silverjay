@@ -9,8 +9,15 @@ public class Weapon : MonoBehaviour
     public SO_WeaponData weaponData;
     public int attackCounter { get; private set; }
 
+    public Transform weaponTF;
+    public Transform baseTF;
+
+    protected Vector3 weapon_oScale;
+    protected Vector3 base_oScale;
+
     protected Animator baseAnimator;
     protected Animator weaponAnimator;
+    
 
 
 
@@ -19,12 +26,18 @@ public class Weapon : MonoBehaviour
         baseAnimator = transform.Find("Base").GetComponent<Animator>();
         weaponAnimator = transform.Find("Weapon").GetComponent<Animator>();
 
+        weapon_oScale = weaponTF.localScale;
+        base_oScale = baseTF.localScale;
+
         gameObject.SetActive(false); //Disable Weapon when not using it
 
         baseAnimator.SetInteger("attackCounter", attackCounter);
         weaponAnimator.SetInteger("attackCounter", attackCounter);
     }
-
+    private void Update()
+    {
+        HandelTurn();
+    }
     public virtual void EnterWeapon()
     {
         gameObject.SetActive(true); //Enable Weapon when using it
@@ -74,6 +87,12 @@ public class Weapon : MonoBehaviour
     }
     #endregion
 
+    public virtual void HandelTurn()
+    {
+        
+        weaponTF.localScale = new Vector3((RuntimeData.player_FacingDirection > 0 ? 1 : -1) * weapon_oScale.x, weapon_oScale.y, weapon_oScale.z);
+        baseTF.localScale = new Vector3((RuntimeData.player_FacingDirection > 0 ? 1 : -1) * base_oScale.x, base_oScale.y, base_oScale.z);
+    }
 
 
 }
