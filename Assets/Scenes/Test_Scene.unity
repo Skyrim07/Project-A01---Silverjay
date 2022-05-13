@@ -3577,9 +3577,9 @@ GameObject:
   - component: {fileID: 136670627}
   - component: {fileID: 136670630}
   - component: {fileID: 136670628}
-  - component: {fileID: 136670631}
   - component: {fileID: 136670632}
   - component: {fileID: 136670633}
+  - component: {fileID: 136670634}
   m_Layer: 10
   m_Name: CombatDummy
   m_TagString: Untagged
@@ -3680,20 +3680,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &136670631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136670626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3d1b7164086c240a5f7b8da719578d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitParticles: {fileID: 8793793915911236191, guid: 010a0951eebfda048bee11ddc527382c,
-    type: 3}
 --- !u!95 &136670632
 Animator:
   serializedVersion: 4
@@ -3735,6 +3721,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &136670634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136670626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7bd980132c0364c85b4ba58bbb53bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHitEffect: 0
+  disablehitColorChange: 0
+  customHitEffect: {fileID: 8793793915911236191, guid: 010a0951eebfda048bee11ddc527382c,
+    type: 3}
+  customHitSound: {fileID: 0}
+  hitMaterial: {fileID: 2100000, guid: ec199754c723adc4b97fb89cdb5565ed, type: 2}
+  health: 100
 --- !u!1 &137325314
 GameObject:
   m_ObjectHideFlags: 0
@@ -35937,12 +35942,12 @@ PrefabInstance:
     - target: {fileID: 3731952349525299216, guid: 8cdf17347eea53a4a8885a3431a87246,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.87599075
+      value: -0.94426256
       objectReference: {fileID: 0}
     - target: {fileID: 3731952349525299216, guid: 8cdf17347eea53a4a8885a3431a87246,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4823279
+      value: -0.32919338
       objectReference: {fileID: 0}
     - target: {fileID: 3731952349770899858, guid: 8cdf17347eea53a4a8885a3431a87246,
         type: 3}

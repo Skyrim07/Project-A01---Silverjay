@@ -17,7 +17,6 @@ public class CombatTestDummy : MonoBehaviour,IDamageable, IKnockbackable
     {
         Debug.Log(amount + " Damage taken");
         anim.SetTrigger("damage");
-
         Instantiate(hitParticles, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360f)));
     }
 
@@ -38,4 +37,6 @@ public class CombatTestDummy : MonoBehaviour,IDamageable, IKnockbackable
         knockbackSpeed.Set(angle.x * velocity * direction, angle.y * velocity);
         rb.velocity = knockbackSpeed;
     }
+
+
 }

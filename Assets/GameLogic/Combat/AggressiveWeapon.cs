@@ -34,8 +34,6 @@ public class AggressiveWeapon : Weapon
         foreach(IDamageable item in detectedDamageables)
         {
             item.Damage(details.damageAmount);
-            CinemachineShake.Instance.ShakeCamera(GlobalLibrary.ATKScreenShakeMagnitude, GlobalLibrary.ATKShakeTIME);
-            CinemachineShake.Instance.HitPause(GlobalLibrary.ATKHitPauseTime);
         }
 
         foreach (IKnockbackable item in detectedKnockbackables)
