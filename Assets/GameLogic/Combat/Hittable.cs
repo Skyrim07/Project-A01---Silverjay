@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hittable : MonoBehaviour,IDamageable, IKnockbackable
+public class Hittable : MonoBehaviour, IDamageable, IKnockbackable
 {
     [SerializeField] private bool disableHitEffect = false;
     [SerializeField] private bool disablehitColorChange = false;

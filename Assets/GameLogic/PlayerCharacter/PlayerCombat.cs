@@ -94,7 +94,7 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule, IDamageable
     }
 
     private void HandleAttackMovement()
-    {
+    { 
         if (setVelocity) 
         {
             playerMovement.SetPlayerVelocity(velocityToSet);

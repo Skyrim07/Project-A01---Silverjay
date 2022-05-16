@@ -28,11 +28,7 @@ public class Destructable : Hittable
         base.Damage(amount);
     }
 
-    public override void Kockback(Vector2 angle, float strength, int direction)
-    {
-        base.Kockback(angle, strength, direction);
-    }
-
+    
     public void DealDamage(float amount)
     {
         CurrentHealth -= amount;

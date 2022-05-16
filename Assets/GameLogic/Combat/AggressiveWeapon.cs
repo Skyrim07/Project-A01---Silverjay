@@ -32,6 +32,7 @@ public class AggressiveWeapon : Weapon
     private void CheckMelleeAttack()
     {
         AttackDetails details = aggressiveWeaponData.AttackDetails[attackCounter];
+
         foreach(IDamageable item in detectedDamageables.ToList())
         {
             item.Damage(details.damageAmount);
