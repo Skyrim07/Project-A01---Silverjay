@@ -39,7 +39,7 @@ public class MoveToPlayer : EnemyAction
     private void FacingPlayer()
     {
         var scale = transform.localScale;
-        scale.x = transform.position.x < RuntimeData.player_Position.x ? -baseScaleX : baseScaleX;
+        scale.x = transform.position.x > RuntimeData.player_Position.x ? -baseScaleX : baseScaleX;
         transform.localScale = scale;
     }
 }

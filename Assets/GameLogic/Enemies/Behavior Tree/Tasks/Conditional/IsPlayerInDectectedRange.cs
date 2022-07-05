@@ -4,7 +4,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class IsPlayerClose : EnemyConditional
+public class IsPlayerInDectectedRange : EnemyConditional
 {
     public float EnemyDetectedRange;
 
@@ -14,4 +14,6 @@ public class IsPlayerClose : EnemyConditional
      
         return Mathf.Abs(transform.position.x - RuntimeData.player_Position.x) > EnemyDetectedRange ? TaskStatus.Failure : TaskStatus.Success;
     }
+
+
 }
