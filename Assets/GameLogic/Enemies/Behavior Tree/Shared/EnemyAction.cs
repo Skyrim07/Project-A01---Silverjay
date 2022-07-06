@@ -9,11 +9,13 @@ public class EnemyAction : Action
     protected Animator animator;
     protected Destructable destructable;
     protected PlayerMovement player;
+    protected TestEnemyBlackBoard blackBorad;
 
     public override void OnAwake()
     {
         body = GetComponent<Rigidbody2D>();
         destructable = GetComponent<Destructable>();
         animator = gameObject.GetComponentInChildren<Animator>();
+        blackBorad = GetComponent<TestEnemyBlackBoard>();
     }
 }

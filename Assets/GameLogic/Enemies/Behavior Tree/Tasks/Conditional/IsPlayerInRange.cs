@@ -4,7 +4,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class IsPlayerInDectectedRange : EnemyConditional
+public class IsPlayerInRange : EnemyConditional
 {
     public float EnemyDetectedRange;
 

@@ -18,6 +18,15 @@ public class MoveToPlayer : EnemyAction
         base.OnAwake();
         baseScaleX = transform.localScale.x;
     }
+
+    public override void OnStart()
+    {
+        
+        base.OnStart();
+        animator.SetBool("isMoving", true);
+        
+        
+    }
     private void MovingtoPlayer()
     {
         
@@ -39,7 +48,23 @@ public class MoveToPlayer : EnemyAction
     private void FacingPlayer()
     {
         var scale = transform.localScale;
-        scale.x = transform.position.x > RuntimeData.player_Position.x ? -baseScaleX : baseScaleX;
+        scale.x = transform.position.x < RuntimeData.player_Position.x ? -baseScaleX : baseScaleX;
         transform.localScale = scale;
+        if (scale.x > 0)
+        {
+            blackBorad.facingDirection = 1;
+        }
+        else
+        {
+            blackBorad.facingDirection = -1;
+        }
     }
+
+    public override void OnEnd()
+    {
+        base.OnConditionalAbort();
+        animator.SetBool("isMoving", false);
+    }
+    
+
 }
