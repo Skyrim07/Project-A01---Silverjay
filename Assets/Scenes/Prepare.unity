@@ -3334,9 +3334,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 729852227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0feb5a4f7b3d2c4cbeef7e2c8929c3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9906dea77f66eb544853f9cb18769a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponTF: {fileID: 730824583}
+  baseTF: {fileID: 984615719}
 --- !u!1 &730824582
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,7 +3352,6 @@ GameObject:
   - component: {fileID: 730824585}
   - component: {fileID: 730824584}
   - component: {fileID: 730824587}
-  - component: {fileID: 730824586}
   m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
@@ -3444,18 +3446,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &730824586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730824582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc211893d6692e4e8db4a707d278650, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &730824587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68054,7 +68044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -854, y: -6.9002686}
+  m_AnchoredPosition: {x: -854, y: -6.901497}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7888595681256942317
