@@ -139,6 +139,14 @@ namespace SKCell
                 CommonUtils.Destroy(tf.GetChild(i).gameObject);
             }
         }
+        public static void ClearChildrenImmediate(this Transform tf)
+        {
+            for (int i = 0; i < tf.childCount; i++)
+            {
+                if (tf.GetChild(i))
+                    GameObject.DestroyImmediate(tf.GetChild(i).gameObject);
+            }
+        }
         /// <summary>
         /// Create an empty child gameobject
         /// </summary>
