@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9906dea77f66eb544853f9cb18769a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 34f896b0f03c8ea44860847ebfced69d, type: 2}
   weaponTF: {fileID: 730824583}
   baseTF: {fileID: 984615719}
 --- !u!1 &730824582
@@ -3352,7 +3352,8 @@ GameObject:
   - component: {fileID: 730824585}
   - component: {fileID: 730824584}
   - component: {fileID: 730824587}
-  m_Layer: 10
+  - component: {fileID: 730824588}
+  m_Layer: 16
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3472,6 +3473,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &730824588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730824582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6f3c2a4aec3bb448fd06ff15c0c352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &751334805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,7 +4362,7 @@ GameObject:
   - component: {fileID: 984615721}
   - component: {fileID: 984615720}
   - component: {fileID: 984615722}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46635,9 +46648,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6258193226654014101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf53a0b8937fc3641a8b2363ced8f38f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a5ddbbbeeab1ab41bd9be2f29b30521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Playercamera: {fileID: 6258193226654014103}
 --- !u!1001 &6258193226778974945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68044,7 +68058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -854, y: -6.901497}
+  m_AnchoredPosition: {x: -854, y: -6.9012756}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7888595681256942317
