@@ -18735,7 +18735,6 @@ GameObject:
   - component: {fileID: 1244644955}
   - component: {fileID: 1244644957}
   - component: {fileID: 1244644958}
-  - component: {fileID: 1244644959}
   m_Layer: 10
   m_Name: GroundEnemy
   m_TagString: Untagged
@@ -18948,25 +18947,6 @@ MonoBehaviour:
       Version: 1.7.2
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
---- !u!114 &1244644959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244644947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ce06eae10c449b4daed163c04c1fe3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableHitEffect: 0
-  disablehitColorChange: 0
-  customHitEffect: {fileID: 8793793915911236191, guid: aa8f667cae03adf4488fdad5f590c4fd,
-    type: 3}
-  customHitSound: {fileID: 0}
-  hitMaterial: {fileID: 2100000, guid: 464babed18599924fab95963a0bb99e5, type: 2}
-  health: 1000
 --- !u!1001 &1247265316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36170,12 +36150,12 @@ PrefabInstance:
     - target: {fileID: 3731952349525299216, guid: 8cdf17347eea53a4a8885a3431a87246,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.25734204
+      value: 0.9697353
       objectReference: {fileID: 0}
     - target: {fileID: 3731952349525299216, guid: 8cdf17347eea53a4a8885a3431a87246,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9663204
+      value: 0.24415876
       objectReference: {fileID: 0}
     - target: {fileID: 3731952349770899858, guid: 8cdf17347eea53a4a8885a3431a87246,
         type: 3}

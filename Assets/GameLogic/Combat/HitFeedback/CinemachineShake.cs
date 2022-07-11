@@ -8,7 +8,7 @@ public class CinemachineShake : MonoBehaviour
 
     public static CinemachineShake Instance { get; private set; }
 
-    public CinemachineVirtualCamera Playercamera;
+    private CinemachineVirtualCamera Playercamera;
 
     private float shakeTimer;
     private float shakeTtimerTotal;
@@ -20,7 +20,7 @@ public class CinemachineShake : MonoBehaviour
     {
         isPause = false;
         Instance = this;
-        
+        Playercamera = GetComponent<CinemachineVirtualCamera>();
     }
     public void ShakeCamera(float intensity, float time)
     {

@@ -15,7 +15,6 @@ public class WeaponHitboxToWeapon : MonoBehaviour
     { 
         
         weapon.AddToDetected(collision);
-        Debug.Log(collision.name);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
