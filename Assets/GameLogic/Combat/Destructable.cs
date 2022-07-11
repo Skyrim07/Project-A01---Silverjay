@@ -21,7 +21,7 @@ public class Destructable : Hittable
         {
             return;
         }
-
+        
 
         DealDamage(amount);
 

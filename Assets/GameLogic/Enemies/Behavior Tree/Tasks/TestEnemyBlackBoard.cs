@@ -18,11 +18,6 @@ public class TestEnemyBlackBoard : MonoBehaviour
         facingDirection = 1;
     }
     
-    public void BackJumpStart()
-    {
-        var direction = RuntimeData.player_Position.x < transform.position.x ? -1 : 1;
-        body.velocity = new Vector2(facingDirection * 30f, 30f);
-    }
 
     // Update is called once per frame
     void Update()

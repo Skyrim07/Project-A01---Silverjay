@@ -49,8 +49,8 @@ public class Hittable : MonoBehaviour, IDamageable, IKnockbackable
 
     protected virtual void Awake()
     {
-        sprite = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        sprite =GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         defaultMaterial = sprite.material;

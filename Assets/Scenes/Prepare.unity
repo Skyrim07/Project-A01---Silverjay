@@ -3353,7 +3353,7 @@ GameObject:
   - component: {fileID: 730824584}
   - component: {fileID: 730824587}
   - component: {fileID: 730824588}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4362,7 +4362,7 @@ GameObject:
   - component: {fileID: 984615721}
   - component: {fileID: 984615720}
   - component: {fileID: 984615722}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46277,6 +46277,7 @@ GameObject:
   - component: {fileID: 6258193226559114249}
   - component: {fileID: 1017530001}
   - component: {fileID: 7383069391352568230}
+  - component: {fileID: 7383069391352568231}
   m_Layer: 10
   m_Name: Player-------------------------
   m_TagString: Player
@@ -67814,6 +67815,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 729852229}
+--- !u!114 &7383069391352568231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258193226559114253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce06eae10c449b4daed163c04c1fe3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableHitEffect: 0
+  disablehitColorChange: 0
+  customHitEffect: {fileID: 0}
+  customHitSound: {fileID: 0}
+  hitMaterial: {fileID: 2100000, guid: 464babed18599924fab95963a0bb99e5, type: 2}
+  health: 150
 --- !u!222 &7420864587448411061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68058,7 +68077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -854, y: -6.9012756}
+  m_AnchoredPosition: {x: -854, y: -6.901718}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7888595681256942317

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using SKCell;
-public sealed class PlayerCombat : MonoBehaviour, IPlayerModule, IDamageable
+public sealed class PlayerCombat : MonoBehaviour, IPlayerModule
 {
     private Weapon weapon;
     private PlayerMovement playerMovement;
@@ -17,11 +17,14 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule, IDamageable
     private float velocityToSet;
 
     private bool setVelocity;
-     
+
+    private CapsuleCollider2D collider;
 
     public TempWeaponInventory inventory { get; private set; }
     public void Initialize()
     {
+        collider = GetComponent<CapsuleCollider2D>();
+
         combatEnable = true;
         inventory = GetComponent<TempWeaponInventory>();
         SetWeapon(inventory.weapons[0]);//Use first weapon in the inventory for testing
@@ -106,8 +109,6 @@ public sealed class PlayerCombat : MonoBehaviour, IPlayerModule, IDamageable
         return combatState;
     }
 
-    public void Damage(float amount)
-    {
-        //
-    }
+    
+    
 }
